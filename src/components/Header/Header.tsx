@@ -1,5 +1,7 @@
 import image1 from "../../assets/ilustra-01.svg";
 import image2 from "../../assets/ilustra-02.svg";
+import search from "../../assets/icons/search.svg";
+import location from "../../assets/icons/location.svg";
 
 export default function Header() {
   return (
@@ -15,15 +17,35 @@ export default function Header() {
             carnaval de 2023
           </h1>
         </div>
-        <div className="mt-10 p-10 flex gap-6 justify-center">
-          <input type="text" placeholder="Pesquise por nome" />
-          <select name="select">
-            <option value="">Selecione uma cidade</option>
-            <option value="orleans">Orleans</option>
-            <option value="criciuma">Criciuma</option>
-            <option value="tubarao">Tubarão</option>
-          </select>
-          <button>buscar agora</button>
+        <div className="mt-10 p-10 flex gap-6 justify-between">
+          <div className="pt-3 pr-2 pb-3 pl-4 flex gap-3 items-center flex-1">
+            <img src={search} alt="icon search" />
+            <input
+              type="text"
+              className="w-full text-base font-normal text-gray"
+              placeholder="Pesquise por nome"
+            />
+          </div>
+
+          <div className="pt-3 pr-2 pb-3 pl-4 flex gap-3 items-center flex-1">
+            <img src={location} alt="icon location" />
+            <select
+              name="select"
+              className="w-full text-base font-normal text-gray"
+            >
+              <option value="">Selecione uma cidade</option>
+              <option value="SaoPaulo">São Paulo</option>
+              <option value="Frorianopolis">Frorianópolis</option>
+              <option value="Curitiba">Curitiba</option>
+              <option value="Salvador">Salvador</option>
+              <option value="RioDeJanerio">Rio de Janeiro</option>
+              <option value="PortoAlegre">Porto Alegre</option>
+            </select>
+          </div>
+
+          <button className="py-3 px-8 bg-purple rounded font-bold text-sm leading-6 uppercase text-white">
+            buscar agora
+          </button>
         </div>
       </div>
       <img src={image2} alt="" className="absolute top-[13.375rem] right-0" />
