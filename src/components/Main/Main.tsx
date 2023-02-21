@@ -1,5 +1,4 @@
 import { Blocos } from "../../data/blocos";
-
 import location from "../../assets/icons/location.svg";
 
 export default function Main() {
