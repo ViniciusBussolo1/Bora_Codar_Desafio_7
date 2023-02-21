@@ -12,7 +12,7 @@ export default function Header() {
           <h3 className="text-base font-medium text-red uppercase tracking-widest">
             find your block
           </h3>
-          <h1 className="text-5xl leading-[3.75rem] font-bold max-w-[40.438rem] text-center text-black">
+          <h1 className="text-5xl leading-[3.75rem] font-bold max-w-[40.438rem] text-center text-black-700">
             Encontre os <span className="text-purple">melhores blocos</span> de
             carnaval de 2023
           </h1>
