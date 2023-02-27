@@ -1,14 +1,6 @@
 import { createContext, ReactNode, useState } from "react";
 import { Blocos } from "../data/blocos";
 
-interface BlocosProps {
-  title: string;
-  description: string;
-  image: string;
-  city: string;
-  abbreviation: string;
-}
-
 interface SearchBlocosContextDataProps {
   handleSearchBloco: (nameBloco: string, city: string) => void;
   blocosFilter: Array<Object>;
@@ -34,6 +26,7 @@ export function SearchBlocosContextProvider({
     texto = texto.replace(/[ÈÉÊË]/, "E");
     texto = texto.replace(/[Ç]/, "C");
     texto = texto.replace(/[ç]/, "c");
+
     return texto.replace(/[^a-z0-9]/gi, "");
   }
 

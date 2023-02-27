@@ -50,7 +50,7 @@ export default function Header() {
               <option value="Florianópolis">Frorianópolis</option>
               <option value="Curitiba">Curitiba</option>
               <option value="Salvador">Salvador</option>
-              <option value="Rio de Janerio">Rio de Janeiro</option>
+              <option value="Rio de Janeiro">Rio de Janeiro</option>
               <option value="Porto Alegre">Porto Alegre</option>
             </select>
           </div>

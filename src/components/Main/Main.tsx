@@ -8,12 +8,10 @@ import location from "../../assets/icons/location.svg";
 export default function Main() {
   const { blocosFilter } = useContext(SearchBlocosContext);
 
-  console.log(blocosFilter);
-
   return (
     <section className="w-full flex justify-center pb-6">
       <main className="max-w-[102rem] mt-28">
-        <div className="flex justify-between">
+        <div className="flex justify-between max-md:gap-4">
           <h2 className="text-3xl leading-[2.75rem] font-bold text-black-700">
             Blocos recomendados
           </h2>
@@ -26,8 +24,8 @@ export default function Main() {
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-8 mt-10">
-          {blocosFilter.length > 1
+        <div className="grid md:grid-cols-2 min-[1216px]:grid-cols-3 gap-8 mt-10">
+          {blocosFilter.length
             ? blocosFilter.map((item: any, index) => (
                 <div key={index} className="w-96 flex flex-col items-center">
                   <img
