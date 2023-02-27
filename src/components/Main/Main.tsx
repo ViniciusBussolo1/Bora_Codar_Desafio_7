@@ -1,7 +1,15 @@
+import { useContext } from "react";
+
 import { Blocos } from "../../data/blocos";
+import { SearchBlocosContext } from "../../context/SearchBlocosContext";
+
 import location from "../../assets/icons/location.svg";
 
 export default function Main() {
+  const { blocosFilter } = useContext(SearchBlocosContext);
+
+  console.log(blocosFilter);
+
   return (
     <section className="w-full flex justify-center pb-6">
       <main className="max-w-[102rem] mt-28">
@@ -19,29 +27,53 @@ export default function Main() {
           </div>
         </div>
         <div className="grid grid-cols-3 gap-8 mt-10">
-          {Blocos.map((item, index) => (
-            <div key={index} className="w-96 flex flex-col items-center">
-              <img
-                src={item.image}
-                alt="carnival block image"
-                className="rounded-t-md"
-              />
-              <div className="flex flex-col gap-4 mt-4 pl-3">
-                <h3 className="text-xl font-bold text-black-700">
-                  {item.title}
-                </h3>
-                <span className="text-base font-normal text-black-900">
-                  {item.description}
-                </span>
-                <div className="flex gap-2">
-                  <img src={location} alt="icon search" />
-                  <span className="text-base font-normal text-black-900">
-                    {item.city}
-                  </span>
+          {blocosFilter.length > 1
+            ? blocosFilter.map((item: any, index) => (
+                <div key={index} className="w-96 flex flex-col items-center">
+                  <img
+                    src={item.image}
+                    alt="carnival block image"
+                    className="rounded-t-md"
+                  />
+                  <div className="flex flex-col gap-4 mt-4 pl-3">
+                    <h3 className="text-xl font-bold text-black-700">
+                      {item.title}
+                    </h3>
+                    <span className="text-base font-normal text-black-900">
+                      {item.description}
+                    </span>
+                    <div className="flex gap-2">
+                      <img src={location} alt="icon search" />
+                      <span className="text-base font-normal text-black-900">
+                        {item.city} - {item.abbreviation}
+                      </span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              ))
+            : Blocos.map((item, index) => (
+                <div key={index} className="w-96 flex flex-col items-center">
+                  <img
+                    src={item.image}
+                    alt="carnival block image"
+                    className="rounded-t-md"
+                  />
+                  <div className="flex flex-col gap-4 mt-4 pl-3">
+                    <h3 className="text-xl font-bold text-black-700">
+                      {item.title}
+                    </h3>
+                    <span className="text-base font-normal text-black-900">
+                      {item.description}
+                    </span>
+                    <div className="flex gap-2">
+                      <img src={location} alt="icon search" />
+                      <span className="text-base font-normal text-black-900">
+                        {item.city} - {item.abbreviation}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
         </div>
       </main>
     </section>

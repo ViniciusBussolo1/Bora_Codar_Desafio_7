@@ -1,30 +1,16 @@
-import { useState } from "react";
-
-import { Blocos } from "../../data/blocos";
+import { useContext, useState } from "react";
+import { SearchBlocosContext } from "../../context/SearchBlocosContext";
 
 import image1 from "../../assets/ilustra-01.svg";
 import image2 from "../../assets/ilustra-02.svg";
 import search from "../../assets/icons/search.svg";
 import location from "../../assets/icons/location.svg";
 
-interface blocosFilterProps {
-  title: string;
-  description: string;
-  image: string;
-  city: string;
-}
-
 export default function Header() {
-  const [blocosFilter, setBlocosFilter] = useState([{}]);
   const [nameBloco, setNameBloco] = useState("");
+  const [city, setCity] = useState("");
 
-  function handleSearchBloco() {
-    const newBlocos = Blocos.filter((item) => item.title.includes(nameBloco));
-
-    setBlocosFilter(newBlocos);
-
-    console.log(blocosFilter);
-  }
+  const { handleSearchBloco } = useContext(SearchBlocosContext);
 
   return (
     <header className="w-full h-[33.25rem] flex justify-center items-center">
@@ -56,20 +42,22 @@ export default function Header() {
             <select
               name="select"
               className="w-full text-base font-normal text-gray"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
             >
               <option value="">Selecione uma cidade</option>
-              <option value="SaoPaulo">São Paulo</option>
-              <option value="Frorianopolis">Frorianópolis</option>
+              <option value="São Paulo">São Paulo</option>
+              <option value="Florianópolis">Frorianópolis</option>
               <option value="Curitiba">Curitiba</option>
               <option value="Salvador">Salvador</option>
-              <option value="RioDeJanerio">Rio de Janeiro</option>
-              <option value="PortoAlegre">Porto Alegre</option>
+              <option value="Rio de Janerio">Rio de Janeiro</option>
+              <option value="Porto Alegre">Porto Alegre</option>
             </select>
           </div>
 
           <button
             className="py-3 px-8 bg-purple rounded font-bold text-sm leading-6 uppercase text-white"
-            onClick={handleSearchBloco}
+            onClick={() => handleSearchBloco(nameBloco, city)}
           >
             buscar agora
           </button>
