@@ -32,7 +32,7 @@ Para iniciá-lo, siga os passos abaixo:
 # Instalar as dependências
 $ npm install
 # Iniciar o projeto
-$ yarn run dev
+$ npm run dev
 ```
 
-O app estará disponível no seu browser pelo endereço http://localhost:3000.
+O app estará disponível no seu browser pelo endereço  http://localhost:5173/.
