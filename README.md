@@ -23,7 +23,7 @@ Clone o projeto e acesse a pasta do mesmo.
 
 ```bash
 $ git clone https://github.com/ViniciusBussolo1/Bora_Codar_Desafio_7.git
-$ cd Desafio_07
+$ cd Bora_Codar_Desafio_7
 ```
 
 Para iniciá-lo, siga os passos abaixo:
